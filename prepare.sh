@@ -52,7 +52,7 @@ function prepare_python() {
     cd webclient/virtualenv
     virtualenv kremvit
     source ./kremvit/bin/activate
-#    pip install django
+    pip install django
 }
 
 
