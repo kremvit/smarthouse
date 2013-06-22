@@ -48,6 +48,7 @@ function prepare_c++() {
 
 # initialize python environment for webclient
 function prepare_python() {
+    mkdir webclient/virtualenv
     cd webclient/virtualenv
     virtualenv kremvit
     source ./kremvit/bin/activate
