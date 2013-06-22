@@ -55,6 +55,7 @@ function prepare_python() {
 }
 
 
+# main actions
 prepare_c++
 #    prepare_python
 exit 0
