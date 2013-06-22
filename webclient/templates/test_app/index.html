@@ -1,0 +1,8 @@
+
+{% if pc_list %}
+    <ul>
+    <li><a href="/polls/{{ pc.name }}/">{{ pc_list }} </a></li>
+    </ul>
+{% else %}
+    <p>No PC's are available.</p>
+{% endif %}
