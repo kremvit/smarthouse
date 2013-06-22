@@ -2,3 +2,15 @@
 Welcome to smarthouse project!
 
 Contact author - kremvit@gmail.com
+
+
+* Building:
+  ========
+# To prepare build environment run:
+prepare.sh
+
+
+* Cleaning:
+  ========
+# To clean environment run:
+prepare.sh clean
