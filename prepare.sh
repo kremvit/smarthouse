@@ -3,10 +3,11 @@
 export LINUX_GCC='linux-gcc-4.7'
 export JSONCPP_DIR='jsoncpp-src-0.5.0'
 export JSONRPC_DIR='jsonrpc-cpp-0.4'
+export SCONS_DIR='scons-local-1.2.0'
 
 # build jsoncpp
 function build_jsoncpp() {
-    cp -a scons* jsoncpp-src-0.5.0/
+    cp -a $SCONS_DIR/* jsoncpp-src-0.5.0/
     cd $JSONCPP_DIR
     python scons.py platform=linux-gcc check
     cp -a ./libs/$LINUX_GCC/libjson_${LINUX_GCC}_libmt.so ../../libs/libjson.so
@@ -16,7 +17,7 @@ function build_jsoncpp() {
 
 #build json rpc
 function build_jsonrpc() {
-    cp -a scons* jsonrpc-cpp-0.4/
+    cp -a $SCONS_DIR/* jsonrpc-cpp-0.4/
     cd $JSONRPC_DIR
     python scons.py platform=linux-gcc
     cp -a libjsonrpc.so ../../libs/libjsonrpc.so
@@ -42,7 +43,6 @@ function prepare_c++() {
     build_jsonrpc
 
     cd ../
-
 }
 
 
@@ -52,12 +52,25 @@ function prepare_python() {
     cd webclient/virtualenv
     virtualenv kremvit
     source ./kremvit/bin/activate
-    pip install django
+#    pip install django
 }
 
+clean() {
+    echo "Cleaning ..."
+
+    rm -rf ./3rd-party/$SCONS_DIR
+    rm -rf ./3rd-party/$JSONCPP_DIR
+    rm -rf ./3rd-party/$JSONRPC_DIR
+    rm -rf ./webclient/virtualenv
+
+    exit 0
+}
+
+$@
 
 # main actions
 prepare_c++
 prepare_python
 exit 0
+
 
