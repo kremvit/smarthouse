@@ -24,8 +24,8 @@
 								<option id="gnu.cpp.compiler.exe.debug.option.optimization.level.142137839" name="Optimization Level" superClass="gnu.cpp.compiler.exe.debug.option.optimization.level" value="gnu.cpp.compiler.optimization.level.none" valueType="enumerated"/>
 								<option id="gnu.cpp.compiler.exe.debug.option.debugging.level.805637331" name="Debug Level" superClass="gnu.cpp.compiler.exe.debug.option.debugging.level" value="gnu.cpp.compiler.debugging.level.max" valueType="enumerated"/>
 								<option id="gnu.cpp.compiler.option.include.paths.1594469490" name="Include paths (-I)" superClass="gnu.cpp.compiler.option.include.paths" valueType="includePath">
-									<listOptionValue builtIn="false" value="../../libcore/include"/>
-									<listOptionValue builtIn="false" value="../../libcore/3rd-party/jsonrpc-cpp-0.4/src"/>
+									<listOptionValue builtIn="false" value="../../../libcore/include"/>
+									<listOptionValue builtIn="false" value="../../../3rd-party/jsonrpc-cpp-0.4/src"/>
 								</option>
 								<inputType id="cdt.managedbuild.tool.gnu.cpp.compiler.input.1413795012" superClass="cdt.managedbuild.tool.gnu.cpp.compiler.input"/>
 							</tool>
@@ -41,8 +41,7 @@
 									<listOptionValue builtIn="false" value="jsonrpc"/>
 								</option>
 								<option id="gnu.cpp.link.option.paths.1049894673" name="Library search path (-L)" superClass="gnu.cpp.link.option.paths" valueType="libPaths">
-									<listOptionValue builtIn="false" value="../../libcore"/>
-									<listOptionValue builtIn="false" value="../../libcore/lib"/>
+									<listOptionValue builtIn="false" value="../../../libs"/>
 								</option>
 								<inputType id="cdt.managedbuild.tool.gnu.cpp.linker.input.1621709115" superClass="cdt.managedbuild.tool.gnu.cpp.linker.input">
 									<additionalInput kind="additionalinputdependency" paths="$(USER_OBJS)"/>

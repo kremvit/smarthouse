@@ -1,13 +1,11 @@
-#include <stdio.h>
+#include <cstdio>
+#include <cstdlib>
+#include <csignal>
 
 #include "CDevice.h"
 #include "CNetworkDevice.h"
 #include "CRpc.h"
 #include "RpcMap.h"
-
-#include <cstdio>
-#include <cstdlib>
-#include <csignal>
 
 static volatile bool g_run = false;
 
