@@ -2,8 +2,7 @@
 #include <cstdlib>
 #include <csignal>
 
-#include "CDevice.h"
-#include "CNetworkDevice.h"
+
 #include "CRpc.h"
 #include "RpcMap.h"
 
@@ -23,11 +22,10 @@ static void signal_handler(int code)
 }
 
 int main(int argc, char * argv[]) {
-	//CNetworkDevice cnd("192.168.1.14", "vkremin-nettop");
-	//printf("name = %s\n", cnd.get_network_name());
-	//printf("ip = %s\n", cnd.get_ip());
 
 	CRpc rpc;
+	rpc.Init();
+
 	Json::Rpc::TcpServer server(std::string("127.0.0.1"), 8086);
 
 	/* to avoid compilation warnings */

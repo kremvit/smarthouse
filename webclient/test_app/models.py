@@ -1,7 +1,8 @@
 from django.db import models
 
 from ctypes import cdll
-lib = cdll.LoadLibrary('/home/vkremin/python-workspace/kremvit/libcore.so')
+
+lib = cdll.LoadLibrary('/home/vkremin/temp/smarthouse/libs/libcore.so')
 
 class CNetworkDevice(object):
     def __init__(self):
