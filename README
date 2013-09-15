@@ -4,13 +4,32 @@ Welcome to smarthouse project!
 Contact author - kremvit@gmail.com
 
 
-* Building:
+* Preparing:
   ========
 # To prepare build environment run:
 prepare.sh
 
 
+* Building:
+  ========
+# To build smarthouse run:
+make
+
+
+* Running:
+  ========
+# To run smarthouse run:
+smarthouse/smarthouse
+
+# To run webclient developers server:
+cd webclient
+source virtualenv/kremvit/bin/activate
+python manage.py runserver
+
 * Cleaning:
   ========
+# To clean smarthouse run:
+make clean
+
 # To clean environment run:
 prepare.sh clean
