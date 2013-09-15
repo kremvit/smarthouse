@@ -3,8 +3,6 @@ from django.template import Context, loader
 
 import json, socket
 
-from test_app.models import PC
-
 def index(request):
 #    import pdb; pdb.set_trace()
 #    pc_list = PC.objects.all()

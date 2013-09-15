@@ -50,7 +50,7 @@ int main(int argc, char * argv[]) {
 		std::cout << "waiting on cin.get" << std::endl;
 		std::cin.get();
 
-	} while (1);
+	} while (0);
 
 	if (status != 0) {
 		std::cout << "Failure" << std::endl;

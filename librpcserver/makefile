@@ -13,8 +13,10 @@ all:
 	g++ -c -fPIC -g $(INCS) src/CAppFacade.cpp -o CAppFacade.o
 	g++ -shared -Wl,-soname,librpcserver.so.1 -olibrpcserver.so.1.0.1 RpcMap.o CRpc.o CRpcServer.o CAppFacade.o -L../libs -ljsonrpc
 	cp librpcserver.so.1.0.1 ../libs/librpcserver.so
-	cp librpcserver.so.1.0.1 ../libs/librpcserver.so.1
+	if [ ! -e ../libs/librpcserver.so.1 ]; then \
+	    ln -s librpcserver.so ../libs/librpcserver.so.1; \
+	fi;
 
 clean:
 	rm -rf *.o librpcserver.so*
-	rm -rf ../libs/librpcserver.so
+	rm -rf ../libs/librpcserver.so ../libs/librpcserver.so.1

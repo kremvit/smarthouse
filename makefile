@@ -12,9 +12,11 @@ libcore: force_look
 	cd ./libcore; $(MAKE) all
 
 librpcserver: force_look
+	$(ECHO) Building librpcserver...
 	cd ./librpcserver; $(MAKE) all
 
 smarthouse: force_look
+	$(ECHO) Building smarthouse...
 	cd ./smarthouse; $(MAKE) all
 
 tests: libcore
