@@ -1,0 +1,20 @@
+
+{% load staticfiles  %}
+
+<link rel="stylesheet" type="text/css" href="{% static 'test_app/style.css'  %}"/>
+
+<h1>Device Details</h1>
+
+{% if pc %}
+    <ul>
+    <a href="/kremvit/{{ pc.hostname }}/">{{ pc.ip }} ({{ pc.hostname }})</a>
+    </ul>
+{% else %}
+    <p>No PC's are available.</p>
+{% endif %}
+
+
+<form action="{% url 'restart' pc.id %}" method="get">
+{% csrf_token %}
+<input type="submit" value="Restart" />
+</form>
