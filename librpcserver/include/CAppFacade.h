@@ -26,6 +26,9 @@ public:
 
 	int Init(CDeviceList * p_device_list);
 
+	int Deinit();
+
+	int GetDevice(int id, Json::Value& device);
 	int GetDeviceList(Json::Value& device_list);
 	int TurnOffDevice(int device_index);
 	int RestartDevice(int device_index);

@@ -11,8 +11,11 @@
 #include <pthread.h>
 
 #include "CAppFacade.h"
+#include "CRpc.h"
 
 class CRpcServer {
+
+	CRpc m_rpc;
 
 	pthread_t m_server_thread;
 
@@ -25,6 +28,10 @@ public:
 	int Init(CAppFacade * p_facade);
 
 	int Run();
+
+	int Stop();
+
+	int Deinit();
 };
 
 #endif /* CRPC_SERVER_H_ */

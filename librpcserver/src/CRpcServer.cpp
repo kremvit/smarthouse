@@ -29,12 +29,10 @@ static void signal_handler(int code)
   }
 }
 
+/* NOTE: prt = &m_rpc */
 void *thread_function( void *ptr )
 {
 	int status = -1;
-
-	CRpc rpc;
-	rpc.Init();
 
 	Json::Rpc::TcpServer server(std::string("127.0.0.1"), 8086);
 
@@ -55,7 +53,7 @@ void *thread_function( void *ptr )
 		std::cout << "Error signal SIGINT will not be handled" << std::endl;
 	}
 
-	MapRPC(server, rpc);
+	MapRPC(server, *(CRpc*)ptr);
 
 	/* server.SetEncapsulatedFormat(Json::Rpc::NETSTRING); */
 
@@ -97,13 +95,31 @@ int CRpcServer::Init(CAppFacade * p_facade) {
 
 	m_p_facade = p_facade;
 
+	m_rpc.Init(m_p_facade);
+
 	status = 0;
 	return status;
 }
 
-int CRpcServer::Run() {
-	int status = pthread_create( &m_server_thread, NULL, thread_function, NULL);
+int CRpcServer::Deinit() {
+
+	int status = -1;
+
+	m_p_facade = NULL;
+
+	status = m_rpc.Deinit();
+
 	return status;
+}
+
+int CRpcServer::Run() {
+	int status = pthread_create( &m_server_thread, NULL, thread_function, (void*)&m_rpc);
+	return status;
+}
+
+int CRpcServer::Stop() {
+	g_run = false;
+	return 0;
 }
 
 

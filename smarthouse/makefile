@@ -7,7 +7,7 @@ INCS=	-I../librpcserver/include \
 : all
 
 all:
-	g++ src/main.cpp $(INCS) -o smarthouse -L../libs -lrpcserver -ljsonrpc -ljson -lcore 
+	g++ -g -O0 src/main.cpp $(INCS) -o smarthouse -L../libs -lrpcserver -ljsonrpc -ljson -lcore 
 	cp smarthouse ../bin
 
 clean:

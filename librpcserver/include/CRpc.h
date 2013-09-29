@@ -20,12 +20,12 @@ class CRpc
 {
   private:
 
-	CAppFacade * p_facade;
+	CAppFacade * m_p_facade;
 
   public:
 	CRpc();
 
-	int Init();
+	int Init(CAppFacade *);
 
 	int Deinit();
 
@@ -33,7 +33,11 @@ class CRpc
 
     bool Notify(const Json::Value& root, Json::Value& response);
 
+    bool GetDevice(const Json::Value& root, Json::Value& response);
+
     bool GetDeviceList(const Json::Value& root, Json::Value& response);
+
+    bool RestartDevice(const Json::Value& root, Json::Value& response);
 
     Json::Value GetDescription();
 };

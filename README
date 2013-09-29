@@ -19,7 +19,7 @@ make
 * Running:
   ========
 # To run smarthouse run:
-smarthouse/smarthouse
+bin/run.sh
 
 # To run webclient developers server:
 cd webclient

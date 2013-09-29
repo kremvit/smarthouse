@@ -3,7 +3,10 @@
 export LINUX_GCC='linux-gcc-4.7'
 export JSONCPP_DIR='jsoncpp-src-0.5.0'
 export JSONRPC_DIR='jsonrpc-cpp-0.4'
+export NMAP_DIR='nmap-6.40'
 export SCONS_DIR='scons-local-1.2.0'
+
+export PROJECT_HOME=`pwd`
 
 # build jsoncpp
 function build_jsoncpp() {
@@ -24,6 +27,14 @@ function build_jsonrpc() {
     cd ../
 }
 
+# build nmap
+function build_nmap() {
+    cd $NMAP_DIR
+    ./configure
+    make
+    cd ../
+}
+
 
 # prepare C++ environment for libcore and tests
 function prepare_c++() {
@@ -41,6 +52,7 @@ function prepare_c++() {
 
     build_jsoncpp
     build_jsonrpc
+    build_nmap
 
     cd ../
 }

@@ -15,9 +15,24 @@
 class CDeviceList {
 	std::vector<CDevice*> device_list;
 public:
+
 	int AddDevice(CDevice*);
-	int RemoveDevice(CDevice*);
-	CDevice * getDevice(int index);
+
+	int RemoveDevice(CDevice*&);
+
+	int RemoveDevice(int);
+
+	CDevice * GetDevice(int index);
+
+	int Build();
+
+	int Rebuild();
+
+	void Print();
+
+	unsigned int Size() { return device_list.size(); }
+
+	~CDeviceList();
 };
 
 

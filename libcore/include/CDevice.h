@@ -12,7 +12,7 @@ class CDevice {
 	int m_id;
 public:
 	CDevice();
-	~CDevice();
+	virtual ~CDevice();
 
 	int get_id() { return this->m_id;}
 };
