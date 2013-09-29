@@ -1,8 +1,17 @@
 
+{% load staticfiles  %}
+
+<link rel="stylesheet" type="text/css" href="{% static 'test_app/style.css'  %}"/>
+
+<h1>Device List</h1>
+
 {% if pc_list %}
     <ul>
-    <li><a href="/polls/{{ pc.name }}/">{{ pc_list }} </a></li>
+    {% for pc in pc_list %}
+        <li><a href="/kremvit/{{ pc.id }}/">{{ pc.ip }} ({{ pc.hostname }})</a></li>
+    {% endfor %}
     </ul>
 {% else %}
     <p>No PC's are available.</p>
 {% endif %}
+<input type=button value="Refresh" onClick="window.location.reload()">
